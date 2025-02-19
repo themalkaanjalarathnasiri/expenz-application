@@ -1,3 +1,4 @@
+import 'package:expenz_app/pages/Onboarding/onboarding_pages.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,21 +11,12 @@ class ExpenzApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Expenz",
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          fontFamily: "Inter",
-        ),
-        home: Scaffold(
-          body: Center(
-            child: Text(
-              "Hello Flutter",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ));
+      title: "Expenz",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: "Inter",
+      ),
+      home: OnboardingScreen(),
+    );
   }
 }
