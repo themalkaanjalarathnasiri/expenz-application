@@ -1,5 +1,7 @@
 import 'package:expenz_app/constants/colors.dart';
 import 'package:expenz_app/constants/constants.dart';
+import 'package:expenz_app/pages/main_page.dart';
+import 'package:expenz_app/services/user_services.dart';
 import 'package:expenz_app/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -185,18 +187,42 @@ class _UserDataScreenState extends State<UserDataScreen> {
 
                       // Submit Button
                       GestureDetector(
-                          onTap: () {
-                            if (_formKey.currentState!.validate()) {
-                              // Form is Valid; Proces Data
-                              String userName = _userNameController.text;
-                              String email = _emailController.text;
-                              String password = _passwordController.text;
-                              String confirmPassword =
-                                  _confirmPasswordController.text;
+                        onTap: () async {
+                          if (_formKey.currentState!.validate()) {
+                            // Form is Valid; Proces Data
+                            String userName = _userNameController.text;
+                            String email = _emailController.text;
+                            String password = _passwordController.text;
+                            String confirmPassword =
+                                _confirmPasswordController.text;
+
+                            // Save details on Device Storage
+                            await UserServices.storeUserDetails(
+                              userName: userName,
+                              email: email,
+                              password: password,
+                              confirmPassword: confirmPassword,
+                              context: context,
+                            );
+
+                            // Navigate to Main Screen
+                            if (context.mounted) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const MainScreen();
+                                  },
+                                ),
+                              );
                             }
-                          },
-                          child: CustomButton(
-                              buttonName: "Next", buttonColor: kMainColor)),
+                          }
+                        },
+                        child: CustomButton(
+                          buttonName: "Next",
+                          buttonColor: kMainColor,
+                        ),
+                      ),
                       const SizedBox(
                         height: 20,
                       ),
