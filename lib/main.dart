@@ -1,4 +1,6 @@
 import 'package:expenz_app/pages/Onboarding/onboarding_pages.dart';
+import 'package:expenz_app/services/user_services.dart';
+import 'package:expenz_app/widgets/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,13 +15,26 @@ class ExpenzApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Expenz",
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: "Inter",
-      ),
-      home: OnboardingScreen(),
+    return FutureBuilder(
+      future: UserServices.checkUsername(),
+      builder: (context, snapshot) {
+        // Still Waiting
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return CircularProgressIndicator();
+        } else {
+          // hasUserName will be set to True if Data is in the snapshot
+          bool hasUserName = snapshot.data ?? false;
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              fontFamily: "Inter",
+            ),
+            home: Wrapper(
+              showMainScreen: hasUserName,
+            ),
+          );
+        }
+      },
     );
   }
 }
