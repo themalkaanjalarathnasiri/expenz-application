@@ -1,4 +1,4 @@
-import 'package:expenz_app/constants/colors.dart';
+import 'package:expenz_app/utils/colors.dart';
 import 'package:expenz_app/data/onboarding_data.dart';
 import 'package:expenz_app/pages/Onboarding/front_page.dart';
 import 'package:expenz_app/pages/Onboarding/shared_onboarding_screen.dart';

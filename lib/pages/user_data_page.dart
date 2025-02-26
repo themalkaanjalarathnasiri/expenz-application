@@ -1,5 +1,5 @@
-import 'package:expenz_app/constants/colors.dart';
-import 'package:expenz_app/constants/constants.dart';
+import 'package:expenz_app/utils/colors.dart';
+import 'package:expenz_app/utils/constants.dart';
 import 'package:expenz_app/pages/main_page.dart';
 import 'package:expenz_app/services/user_services.dart';
 import 'package:expenz_app/widgets/custom_button.dart';

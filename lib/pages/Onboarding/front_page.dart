@@ -1,4 +1,4 @@
-import 'package:expenz_app/constants/colors.dart';
+import 'package:expenz_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

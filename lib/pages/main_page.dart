@@ -1,4 +1,4 @@
-import 'package:expenz_app/constants/colors.dart';
+import 'package:expenz_app/utils/colors.dart';
 import 'package:expenz_app/pages/add_new_page.dart';
 import 'package:expenz_app/pages/budget_page.dart';
 import 'package:expenz_app/pages/home_page.dart';
@@ -18,9 +18,9 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> pages = [
+      AddNewScreen(),
       HomeScreen(),
       TransactionScreen(),
-      AddNewScreen(),
       BudgetScreen(),
       ProfileScreen()
     ];

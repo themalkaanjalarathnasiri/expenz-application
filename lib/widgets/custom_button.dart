@@ -1,4 +1,4 @@
-import 'package:expenz_app/constants/colors.dart';
+import 'package:expenz_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
       child: Center(
         child: Text(
           buttonName,
-          style: TextStyle(
+          style: const TextStyle(
             color: kWhite,
             fontSize: 16,
             fontWeight: FontWeight.w500,

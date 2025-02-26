@@ -1,5 +1,5 @@
-import 'package:expenz_app/constants/colors.dart';
-import 'package:expenz_app/constants/constants.dart';
+import 'package:expenz_app/utils/colors.dart';
+import 'package:expenz_app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class IncomeExpenseCard extends StatefulWidget {
