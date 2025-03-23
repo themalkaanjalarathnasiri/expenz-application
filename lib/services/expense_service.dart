@@ -49,7 +49,7 @@ class ExpenseService {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text("Error on Adding an Expense"),
+            content: Text("Error on Adding an Expense..."),
             duration: Duration(seconds: 2),
           ),
         );
