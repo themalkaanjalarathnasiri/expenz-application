@@ -1,3 +1,5 @@
+import 'package:expenz_app/models/expense_model.dart';
+import 'package:expenz_app/services/expense_service.dart';
 import 'package:expenz_app/utils/colors.dart';
 import 'package:expenz_app/pages/add_new_page.dart';
 import 'package:expenz_app/pages/budget_page.dart';
@@ -15,12 +17,45 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _currentPageIndex = 0;
+
+  List<Expense> expenseList = [];
+
+  // Fetch Expenses
+  void fetchAllExpenses() async {
+    List<Expense> loadedExpenses = await ExpenseService().loadExpenses();
+    setState(() {
+      expenseList = loadedExpenses;
+      print(expenseList.length);
+    });
+  }
+
+  // Add New Expense
+  void addNewExpense(Expense newExpense) {
+    ExpenseService().saveExpenses(newExpense, context);
+
+    // Update Expense List
+    setState(() {
+      expenseList.add(newExpense);
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setState(() {
+      fetchAllExpenses();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final List<Widget> pages = [
-      AddNewScreen(),
       HomeScreen(),
       TransactionScreen(),
+      AddNewScreen(
+        addExpense: addNewExpense,
+      ),
       BudgetScreen(),
       ProfileScreen()
     ];

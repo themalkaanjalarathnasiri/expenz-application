@@ -1,5 +1,6 @@
 import 'package:expenz_app/models/expense_model.dart';
 import 'package:expenz_app/models/income_model.dart';
+import 'package:expenz_app/services/expense_service.dart';
 import 'package:expenz_app/utils/colors.dart';
 import 'package:expenz_app/utils/constants.dart';
 import 'package:expenz_app/widgets/custom_button.dart';
@@ -8,7 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class AddNewScreen extends StatefulWidget {
-  const AddNewScreen({super.key});
+  final Function(Expense) addExpense;
+  const AddNewScreen({super.key, required this.addExpense});
 
   @override
   State<AddNewScreen> createState() => _AddNewScreenState();
@@ -396,9 +398,32 @@ class _AddNewScreenState extends State<AddNewScreen> {
                           SizedBox(
                             height: 20,
                           ),
-                          CustomButton(
-                            buttonName: "Add",
-                            buttonColor: _selectedMethod == 0 ? kRed : kGreen,
+                          // Submit Button
+                          GestureDetector(
+                            onTap: () async {
+                              // Save Data in Shared Preference
+                              List<Expense> loadedExpenses =
+                                  await ExpenseService().loadExpenses();
+
+                              // Create the Expense to Store
+                              Expense expense = Expense(
+                                id: loadedExpenses.length + 1,
+                                title: _titleController.text,
+                                amount: _amountController.text.isEmpty
+                                    ? 0
+                                    : double.parse(_amountController.text),
+                                category: _expensecategory,
+                                date: _selectedDate,
+                                time: _selectedTime,
+                                description: _descriptionController.text,
+                              );
+
+                              widget.addExpense(expense);
+                            },
+                            child: CustomButton(
+                              buttonName: "Add",
+                              buttonColor: _selectedMethod == 0 ? kRed : kGreen,
+                            ),
                           )
                         ],
                       ),
