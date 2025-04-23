@@ -16,7 +16,7 @@ class FrontPage extends StatelessWidget {
           width: 200,
           fit: BoxFit.cover,
         ),
-        Center(
+        const Center(
           child: Text(
             "Expenz",
             style: TextStyle(

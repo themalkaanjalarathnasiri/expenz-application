@@ -13,6 +13,8 @@ class Wrapper extends StatefulWidget {
 class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
-    return widget.showMainScreen ? MainScreen() : OnboardingScreen();
+    return widget.showMainScreen
+        ? const MainScreen()
+        : const OnboardingScreen();
   }
 }

@@ -90,19 +90,22 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> pages = [
+      HomeScreen(
+        expensesList: expenseList,
+        incomesList: incomeList,
+      ),
       TransactionScreen(
         expensesList: expenseList,
         incomesList: incomeList,
         onDismissedExpense: removeExpense,
         onDismissedIncome: removeIncome,
       ),
-      HomeScreen(),
       AddNewScreen(
         addExpense: addNewExpense,
         addIncome: addNewIncome,
       ),
-      BudgetScreen(),
-      ProfileScreen()
+      const BudgetScreen(),
+      const ProfileScreen()
     ];
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
@@ -116,27 +119,27 @@ class _MainScreenState extends State<MainScreen> {
             _currentPageIndex = value;
           });
         },
-        selectedLabelStyle: TextStyle(
+        selectedLabelStyle: const TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.w600,
         ),
         items: [
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: "Home",
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.receipt),
             label: "Transaction",
           ),
           BottomNavigationBarItem(
             icon: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
                 color: kMainColor,
                 shape: BoxShape.circle,
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.add,
                 color: kWhite,
                 size: 30,
@@ -144,11 +147,11 @@ class _MainScreenState extends State<MainScreen> {
             ),
             label: "",
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.rocket),
             label: "Budget",
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: "Profile",
           ),

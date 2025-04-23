@@ -25,23 +25,23 @@ class SharedOnboardingScreen extends StatelessWidget {
             width: 300,
             fit: BoxFit.cover,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.w600,
             ),
             textAlign: TextAlign.center,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
             description,
-            style: TextStyle(
+            style: const TextStyle(
               color: kGrey,
               fontSize: 20,
               fontWeight: FontWeight.w500,

@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SharedPreferences.getInstance;
+  SharedPreferences.getInstance;
   runApp(const ExpenzApp());
 }
 
@@ -20,7 +20,7 @@ class ExpenzApp extends StatelessWidget {
       builder: (context, snapshot) {
         // Still Waiting
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         } else {
           // hasUserName will be set to True if Data is in the snapshot
           bool hasUserName = snapshot.data ?? false;

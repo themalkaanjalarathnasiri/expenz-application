@@ -16,7 +16,7 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   // Page Controller
-  PageController _controller = PageController();
+  final PageController _controller = PageController();
 
   bool showDetailsPage = false;
   @override
@@ -37,7 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     });
                   },
                   children: [
-                    FrontPage(),
+                    const FrontPage(),
                     SharedOnboardingScreen(
                       title: OnboardingData.onboardngDataList[0].title,
                       imagePath: OnboardingData.onboardngDataList[0].imagePath,
@@ -61,11 +61,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 // Page Dot Indicator
 
                 Container(
-                  alignment: Alignment(0, 0.68),
+                  alignment: const Alignment(0, 0.68),
                   child: SmoothPageIndicator(
                     controller: _controller,
                     count: 4,
-                    effect: WormEffect(
+                    effect: const WormEffect(
                       activeDotColor: kMainColor,
                       dotColor: kLightGrey,
                     ),
@@ -82,7 +82,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             onTap: () {
                               _controller.animateToPage(
                                 _controller.page!.toInt() + 1,
-                                duration: Duration(milliseconds: 400),
+                                duration: const Duration(milliseconds: 400),
                                 curve: Curves.easeInOut,
                               );
                             },
@@ -97,7 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => UserDataScreen(),
+                                  builder: (context) => const UserDataScreen(),
                                 ),
                               );
                             },

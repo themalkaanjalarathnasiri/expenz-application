@@ -38,7 +38,7 @@ class ExpenseService {
       // Show Message
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text("Expense Added Successfully!"),
             duration: Duration(seconds: 2),
           ),
@@ -48,7 +48,7 @@ class ExpenseService {
       // Show Message
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text("Error on Adding an Expense..."),
             duration: Duration(seconds: 2),
           ),
@@ -99,7 +99,7 @@ class ExpenseService {
       // Show Message
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text("Expense Deleted Successfuly"),
             duration: Duration(seconds: 2),
           ),
@@ -109,7 +109,7 @@ class ExpenseService {
       print(error.toString());
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text("Error Deleting Expense"),
             duration: Duration(seconds: 2),
           ),

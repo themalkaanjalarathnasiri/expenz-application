@@ -14,7 +14,7 @@ class UserServices {
       // Check Whether Passwords Match
       if (password != confirmPassword) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text("Passwords do not match."),
           ),
         );
@@ -28,7 +28,7 @@ class UserServices {
       await prefs.setString("email", email);
 
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("User Login Successfull"),
         ),
       );

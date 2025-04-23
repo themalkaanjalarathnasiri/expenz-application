@@ -24,8 +24,8 @@ class IncomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
-      padding: EdgeInsets.all(20),
+      margin: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
           color: kWhite,
           borderRadius: BorderRadius.circular(10),
@@ -34,7 +34,7 @@ class IncomeCard extends StatelessWidget {
               color: kGrey.withOpacity(0.4),
               spreadRadius: 1,
               blurRadius: 10,
-              offset: Offset(0, 1),
+              offset: const Offset(0, 1),
             ),
           ]),
       child: Row(
@@ -53,7 +53,7 @@ class IncomeCard extends StatelessWidget {
               // fit: BoxFit.cover,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Column(
@@ -71,7 +71,7 @@ class IncomeCard extends StatelessWidget {
                 width: 150,
                 child: Text(
                   description,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     color: kGrey,
@@ -81,13 +81,13 @@ class IncomeCard extends StatelessWidget {
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
                 "+${amount.toStringAsFixed(2)}",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: kGreen,
@@ -95,7 +95,7 @@ class IncomeCard extends StatelessWidget {
               ),
               Text(
                 DateFormat.jm().format(date),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                   color: kGrey,

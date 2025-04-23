@@ -52,7 +52,7 @@ class _UserDataScreenState extends State<UserDataScreen> {
                   width: 240,
                   fit: BoxFit.cover,
                 ),
-                Text(
+                const Text(
                   "Enter Your Personal Details",
                   style: TextStyle(
                     color: kBlack,
@@ -76,13 +76,14 @@ class _UserDataScreenState extends State<UserDataScreen> {
                           if (value!.isEmpty) {
                             return "Please Enter Your Name";
                           }
+                          return null;
                         },
                         decoration: InputDecoration(
                           hintText: "Name",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          contentPadding: EdgeInsets.symmetric(
+                          contentPadding: const EdgeInsets.symmetric(
                             vertical: 15,
                             horizontal: 20,
                           ),
@@ -97,13 +98,14 @@ class _UserDataScreenState extends State<UserDataScreen> {
                           if (value!.isEmpty) {
                             return "Please Enter Your Email";
                           }
+                          return null;
                         },
                         decoration: InputDecoration(
                           hintText: "Email",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          contentPadding: EdgeInsets.symmetric(
+                          contentPadding: const EdgeInsets.symmetric(
                             vertical: 15,
                             horizontal: 20,
                           ),
@@ -118,6 +120,7 @@ class _UserDataScreenState extends State<UserDataScreen> {
                           if (value!.isEmpty) {
                             return "Please Enter a Valid Password";
                           }
+                          return null;
                         },
                         obscureText: true,
                         decoration: InputDecoration(
@@ -125,7 +128,7 @@ class _UserDataScreenState extends State<UserDataScreen> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          contentPadding: EdgeInsets.symmetric(
+                          contentPadding: const EdgeInsets.symmetric(
                             vertical: 15,
                             horizontal: 20,
                           ),
@@ -140,6 +143,7 @@ class _UserDataScreenState extends State<UserDataScreen> {
                           if (value!.isEmpty) {
                             return "Please Enter the Same Password";
                           }
+                          return null;
                         },
                         obscureText: true,
                         decoration: InputDecoration(
@@ -147,7 +151,7 @@ class _UserDataScreenState extends State<UserDataScreen> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          contentPadding: EdgeInsets.symmetric(
+                          contentPadding: const EdgeInsets.symmetric(
                             vertical: 15,
                             horizontal: 20,
                           ),
@@ -161,7 +165,7 @@ class _UserDataScreenState extends State<UserDataScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "Remember Me for the next time",
                             style: TextStyle(
                               fontSize: 16,
@@ -218,7 +222,7 @@ class _UserDataScreenState extends State<UserDataScreen> {
                             }
                           }
                         },
-                        child: CustomButton(
+                        child: const CustomButton(
                           buttonName: "Next",
                           buttonColor: kMainColor,
                         ),

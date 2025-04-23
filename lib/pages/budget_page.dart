@@ -12,9 +12,8 @@ class _BudgetScreenState extends State<BudgetScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Budget Page"),
+        title: const Text("Budget Page"),
       ),
     );
-    ;
   }
 }

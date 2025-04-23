@@ -138,7 +138,7 @@ class _AddNewScreenState extends State<AddNewScreen> {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        TextField(
+                        const TextField(
                           style: TextStyle(
                             fontSize: 60,
                             color: kWhite,
@@ -163,7 +163,7 @@ class _AddNewScreenState extends State<AddNewScreen> {
                 Container(
                   height: height * 0.7,
                   margin: EdgeInsets.only(top: height * 0.31),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: kWhite,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
@@ -181,7 +181,7 @@ class _AddNewScreenState extends State<AddNewScreen> {
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(100),
                               ),
-                              contentPadding: EdgeInsets.symmetric(
+                              contentPadding: const EdgeInsets.symmetric(
                                 vertical: kDefaultPadding,
                                 horizontal: 20,
                               ),
@@ -211,7 +211,7 @@ class _AddNewScreenState extends State<AddNewScreen> {
                               });
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           TextFormField(
@@ -220,13 +220,13 @@ class _AddNewScreenState extends State<AddNewScreen> {
                               hintText: "Title",
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(100)),
-                              contentPadding: EdgeInsets.symmetric(
+                              contentPadding: const EdgeInsets.symmetric(
                                 vertical: kDefaultPadding,
                                 horizontal: 20,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           TextFormField(
@@ -235,13 +235,13 @@ class _AddNewScreenState extends State<AddNewScreen> {
                               hintText: "Description",
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(100)),
-                              contentPadding: EdgeInsets.symmetric(
+                              contentPadding: const EdgeInsets.symmetric(
                                 vertical: kDefaultPadding,
                                 horizontal: 20,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           TextFormField(
@@ -251,13 +251,13 @@ class _AddNewScreenState extends State<AddNewScreen> {
                               hintText: "Amount",
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(100)),
-                              contentPadding: EdgeInsets.symmetric(
+                              contentPadding: const EdgeInsets.symmetric(
                                 vertical: kDefaultPadding,
                                 horizontal: 20,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
 
@@ -286,8 +286,8 @@ class _AddNewScreenState extends State<AddNewScreen> {
                                     color: kMainColor,
                                     borderRadius: BorderRadius.circular(100),
                                   ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
+                                  child: const Padding(
+                                    padding: EdgeInsets.symmetric(
                                       horizontal: 20,
                                       vertical: 10,
                                     ),
@@ -323,7 +323,7 @@ class _AddNewScreenState extends State<AddNewScreen> {
                               )
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           // Time Picker
@@ -354,8 +354,8 @@ class _AddNewScreenState extends State<AddNewScreen> {
                                     color: kYellow,
                                     borderRadius: BorderRadius.circular(100),
                                   ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
+                                  child: const Padding(
+                                    padding: EdgeInsets.symmetric(
                                       horizontal: 20,
                                       vertical: 10,
                                     ),
@@ -391,14 +391,14 @@ class _AddNewScreenState extends State<AddNewScreen> {
                               )
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Divider(
+                          const Divider(
                             color: kLightGrey,
                             thickness: 5,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           // Submit Button
@@ -470,6 +470,5 @@ class _AddNewScreenState extends State<AddNewScreen> {
         ),
       ),
     );
-    ;
   }
 }
