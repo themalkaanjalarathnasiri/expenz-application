@@ -55,4 +55,11 @@ class UserServices {
     String? email = prefs.getString("email");
     return {"username": userName!, "email": email!};
   }
+
+  // Method to remove username and email from sahredpreferences and wipe data
+  static Future<void> clearUserData() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.remove('username');
+    await pref.remove('email');
+  }
 }
